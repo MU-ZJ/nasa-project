@@ -17,7 +17,7 @@ function Gallery() {
 
     useEffect(() => {
 
-jsonp('http://hubblesite.org/api/v3/images/all', null, (err, data) => {
+jsonp('https://hubblesite.org/api/v3/images/all', null, (err, data) => {
     if(err) {
         console.error(err.message)
     } else {
@@ -27,7 +27,7 @@ jsonp('http://hubblesite.org/api/v3/images/all', null, (err, data) => {
         
         id.map((item) => {
 
-    jsonp(`http://hubblesite.org/api/v3/image/${item}`, null, (err, data) => {
+    jsonp(`https://hubblesite.org/api/v3/image/${item}`, null, (err, data) => {
         if(err) {
             console.error(err.message)
         } else {
