@@ -53,7 +53,7 @@ const card = data.map((item) => {
 
                     <figure className="image is-4by3">
 
-                        <img src={`https:${item.image_files[0]['file_url']}`} />
+                        <img alt="" src={`https:${item.image_files[0]['file_url']}`} />
 
                     </figure>
 
