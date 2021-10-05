@@ -1,33 +1,17 @@
-import jsonp from 'jsonp';
+//import {jsonp} from 'jsonp';
 import {useEffect, useState} from 'react';
 
 
 
 let temp = []
 
-function testHTML(credits) {
-    return {__html: credits};
-}
-
 function Gallery() {
-    
-    const [id, setId] = useState([])
     
     const [data, setData] = useState([])
 
     useEffect(() => {
 
-jsonp('https://hubblesite.org/api/v3/images/all', null, (err, data) => {
-    if(err) {
-        console.error(err.message)
-    } else {
-        const id = data.map((item) => {
-            return item.id
-        })
-        
-        id.map((item) => {
-
-    jsonp(`https://hubblesite.org/api/v3/image/${item}`, null, (err, data) => {
+    fetch("https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=10&api_key=zZuTfX5huefKfc6jzWkftocfagNpSd11Ul53nrCR", null, (err, data) => {
         if(err) {
             console.error(err.message)
         } else {
@@ -36,12 +20,6 @@ jsonp('https://hubblesite.org/api/v3/images/all', null, (err, data) => {
         }
     })
 
-        })
-        setId(id)
-    }
-
-})
-        
     }, [])
 
 const card = data.map((item) => {
@@ -53,7 +31,7 @@ const card = data.map((item) => {
 
                     <figure className="image is-4by3">
 
-                        <img alt="" src={`https:${item.image_files[0]['file_url']}`} />
+                        <img alt="" src={item.image_src} />
 
                     </figure>
 
@@ -63,9 +41,7 @@ const card = data.map((item) => {
 
                     <div className="media-content">
 
-                        <p className="title is-4">{item.name}</p>
-
-                        <p className="subtitle is-6" dangerouslySetInnerHTML={testHTML(item.credits)}></p>
+                      <p className="title is-4">{item.camera.full_name}</p>
 
                     </div>
 
