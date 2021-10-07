@@ -1,8 +1,6 @@
 #+TITLE: To Do
 
-* Gallery.js
-
-** ToDo
+** Gallery.js
 
 - Current JSON format is ~{photos}/{int}/{...}~. Rebuild after fetch to format ~[array]/{int}/{...}~.
   - Follow up by getting ~image_src~ value printed in html cards.
