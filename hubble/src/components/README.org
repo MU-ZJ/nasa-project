@@ -1,6 +1,9 @@
 #+TITLE: To Do
 
 * Gallery.js
+
+** ToDo
+
 - Current JSON format is ~{photos}/{int}/{...}~. Rebuild after fetch to format ~[array]/{int}/{...}~.
   - Follow up by getting ~image_src~ value printed in html cards.
     - Follow up by printing ~{camera: full_name}~ and ~{rover: name}~ into respective fields.
