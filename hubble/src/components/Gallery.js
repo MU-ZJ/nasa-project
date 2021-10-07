@@ -1,5 +1,6 @@
 //import {jsonp} from 'jsonp';
-import {useEffect, useState} from 'react';
+//import {useEffect, useState} from 'react';
+import {useEffect} from 'react';
 
 /*
         if(err) {
@@ -16,19 +17,24 @@ let temp = []
 
 function Gallery() {
     
-    const [data, setData] = useState([])
+    //const [data, setData] = useState([])
 
     useEffect(() => {
 
         fetch("https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=10&api_key=zZuTfX5huefKfc6jzWkftocfagNpSd11Ul53nrCR")
             .then(res => res.json())
-            .then(result => setData(result))
+            .then(data => temp.push(data))
     }, [])
-    console.log(data)
-    temp.push(data)
+    //temp.push(data)
+    //console.log(data)
     console.log(temp)
 
-const card = temp.map((item) => {
+    for (let i = 0; i <= temp.length; i++) {
+        //console.log(temp[i]);
+        break
+    }
+
+const card = temp.map((data) => {
     return (
 
             <div className="card column is-one-quarter imagePreview">
@@ -37,7 +43,7 @@ const card = temp.map((item) => {
 
                     <figure className="image is-4by3">
 
-                        <img alt="" src={item.image_src} />
+                        <img alt="" src={data.image_src} />
 
                     </figure>
 

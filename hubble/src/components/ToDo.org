@@ -1,0 +1,21 @@
+#+TITLE: To Do
+
+* Gallery.js
+- Current JSON format is ~{photos}/{int}/{...}~. Rebuild after fetch to format ~[array]/{int}/{...}~.
+  - Follow up by getting ~image_src~ value printed in html cards.
+    - Follow up by printing ~{camera: full_name}~ and ~{rover: name}~ into respective fields.
+
+- Create ENV file for API key.
+
+Current fetch request format is:
+
+#+begin_src typescript
+
+    useEffect(() => {
+
+        fetch("https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=10&api_key=zZuTfX5huefKfc6jzWkftocfagNpSd11Ul53nrCR")
+            .then(res => res.json())
+            .then(data => temp.push(data))
+    }, [])
+
+#+end_src
