@@ -14,11 +14,18 @@ Current fetch request format is:
 
 #+begin_src typescript
 
+    const [images, setImages] = useState([])
+
     useEffect(() => {
 
-        fetch("https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=10&api_key=zZuTfX5huefKfc6jzWkftocfagNpSd11Ul53nrCR")
-            .then(res => res.json())
-            .then(data => temp.push(data))
+        axios.get("https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=10&api_key=zZuTfX5huefKfc6jzWkftocfagNpSd11Ul53nrCR")
+            //.then(res => res.json())
+            //.then(result => setData(result.photos))
+            .then(res => {
+                console.log(res.data.photos)
+                setImages(res.data.photos)
+            })
+
     }, [])
 
 #+end_src
