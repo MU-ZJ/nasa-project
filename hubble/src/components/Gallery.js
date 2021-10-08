@@ -1,6 +1,7 @@
 //import {jsonp} from 'jsonp';
-//import {useEffect, useState} from 'react';
-import {useEffect} from 'react';
+import {useEffect, useState} from 'react';
+import axios from 'axios';
+//import {useEffect} from 'react';
 
 /*
         if(err) {
@@ -13,29 +14,34 @@ import {useEffect} from 'react';
                      <p className="title is-4">{item.camera.full_name}</p>
 */
 
-let temp = []
-
 function Gallery() {
     
-    //const [data, setData] = useState([])
+    const [images, setImages] = useState([])
 
     useEffect(() => {
 
-        fetch("https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=10&api_key=zZuTfX5huefKfc6jzWkftocfagNpSd11Ul53nrCR")
-            .then(res => res.json())
-            .then(data => temp.push(data))
+        axios.get("https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=10&api_key=zZuTfX5huefKfc6jzWkftocfagNpSd11Ul53nrCR")
+            //.then(res => res.json())
+            //.then(result => setData(result.photos))
+            .then(res => {
+                console.log(res.data.photos)
+                setImages(res.data.photos)
+            })
+
     }, [])
     //temp.push(data)
-    //console.log(data)
-    console.log(temp)
+    console.log(images)
 
-    for (let i = 0; i <= temp.length; i++) {
-        //console.log(temp[i]);
-        break
-    }
+    //for (let i = 0; i <= temp.length; i++) {
+        //console.log(temp[i].img_src);
+    //}
 
-const card = temp.map((data) => {
+
     return (
+
+        <section className="section columns is-multiline">
+
+          {images.map(image => (
 
             <div className="card column is-one-quarter imagePreview">
 
@@ -43,7 +49,7 @@ const card = temp.map((data) => {
 
                     <figure className="image is-4by3">
 
-                        <img alt="" src={data.image_src} />
+                        <img alt="" src={image.img_src} />
 
                     </figure>
 
@@ -53,19 +59,13 @@ const card = temp.map((data) => {
 
                     <div className="media-content">
 
-
                     </div>
 
                 </div>
 
             </div>
-    )
-})
-    return (
 
-        <section className="section columns is-multiline">
-
-            {card}
+          ))}
 
         </section>
     )

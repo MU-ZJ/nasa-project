@@ -2,9 +2,10 @@
 
 ** Gallery.js
 
-- Current JSON format is ~{photos}/{int}/{...}~. Rebuild after fetch to format ~[array]/{int}/{...}~.
-  - Follow up by getting ~image_src~ value printed in html cards.
-    - Follow up by printing ~{camera: full_name}~ and ~{rover: name}~ into respective fields.
+- [X] Current JSON format is ~{photos}/{int}/{...}~. Rebuild after fetch to format ~[array]/{int}/{...}~.
+- [X] Follow up by getting ~image_src~ value printed in html cards.
+- [ ] Check if a production build will fix the double API call issue.
+- [ ] Follow up by printing ~{camera: full_name}~ and ~{rover: name}~ into respective fields.
 
 - Create ENV file for API key.
 
