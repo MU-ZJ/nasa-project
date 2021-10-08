@@ -4,10 +4,11 @@
 
 - [X] Current JSON format is ~{photos}/{int}/{...}~. Rebuild after fetch to format ~[array]/{int}/{...}~.
 - [X] Follow up by getting ~image_src~ value printed in html cards.
-- [ ] Check if a production build will fix the double API call issue.
+- [X] Check if a production build will fix the double API call issue.
+- [ ] Production build still double calling. Fix the issue.
 - [ ] Follow up by printing ~{camera: full_name}~ and ~{rover: name}~ into respective fields.
 
-- Create ENV file for API key.
+- [ ] Create ENV file for API key.
 
 Current fetch request format is:
 
