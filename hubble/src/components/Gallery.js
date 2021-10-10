@@ -1,18 +1,5 @@
-//import {jsonp} from 'jsonp';
 import {useEffect, useState} from 'react';
 import axios from 'axios';
-//import {useEffect} from 'react';
-
-/*
-        if(err) {
-            console.error(err.message)
-        } else {
-            temp.push(data)
-            setData(temp)
-        }
-    })
-                     <p className="title is-4">{item.camera.full_name}</p>
-*/
 
 function Gallery() {
     
@@ -21,21 +8,11 @@ function Gallery() {
     useEffect(() => {
 
         axios.get("https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=10&api_key=zZuTfX5huefKfc6jzWkftocfagNpSd11Ul53nrCR")
-            //.then(res => res.json())
-            //.then(result => setData(result.photos))
             .then(res => {
-                console.log(res.data.photos)
                 setImages(res.data.photos)
             })
 
     }, [])
-    //temp.push(data)
-    console.log(images)
-
-    //for (let i = 0; i <= temp.length; i++) {
-        //console.log(temp[i].img_src);
-    //}
-
 
     return (
 
