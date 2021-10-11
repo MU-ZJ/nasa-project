@@ -1,6 +1,6 @@
 # Hubble API Gallery
 
-https://hubblegallery.herokuapp.com/
+https://nasagallery.herokuapp.com/
 
 A react project utilizing the Hubble API to display images from the Hubble telescope provided by NASA, ESA, and STScI.
 The project uses an initial API call to pull a list of available image IDs, then maps through the IDs to make additional API calls for each.
