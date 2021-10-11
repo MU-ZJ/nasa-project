@@ -9,7 +9,7 @@
 - [ ] Implement sorting algorithm to remove duplicates.
 - [ ] Follow up by printing ~{camera: full_name}~ and ~{rover: name}~ into respective fields.
 
-- [ ] Create ENV file for API key.
+- [X] Create ENV file for API key.
 
 Current fetch request format is:
 
@@ -19,7 +19,7 @@ Current fetch request format is:
 
     useEffect(() => {
 
-        axios.get("https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=10&api_key=zZuTfX5huefKfc6jzWkftocfagNpSd11Ul53nrCR")
+        axios.get(`https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=10&api_key=${process.env.REACT_APP_API_KEY}`)
             //.then(res => res.json())
             //.then(result => setData(result.photos))
             .then(res => {

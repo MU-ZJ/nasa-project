@@ -4,7 +4,7 @@ function Footer() {
 
           <div className="content has-text-centered">
 
-            <p>Created by Zachary Murphy. All image credit to NASA, ESA, and STScI.</p>
+            <p>Created by Zachary Murphy. All image credit to NASA.</p>
 
           </div>
 
