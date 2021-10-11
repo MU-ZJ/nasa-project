@@ -10,7 +10,7 @@ Currently all images in the gallery are duplicated. This is due to the API itsel
 Project is currently set to display mars rover images.
 
 #+caption: Homepage
-[[./images/gallery-home.png]]
+[[./images/homepage.png]]
 
 #+caption: Gallery
-[[./images/gallery-gallery.png]]
+[[./images/gallery.png]]
