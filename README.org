@@ -1,0 +1,11 @@
+#+TITLE: Hubble API Gallery
+
+[[https://nasagallery.herokuapp.com/]]
+
+A react project utilizing the NASA API to display images from various sources. The project pulls images directly from the NASA API,
+then loops through and inserts the image links into HTML cards utilizing Reacts’ useEffect and useState features.
+
+Currently all images in the gallery are duplicated. This is due to the API itself containing duplicate images. While not an issue on the projects' side, it could be mitigated using an algorithm to remove the duplicates after the API call.
+
+[[./images/gallery-home.png][Homepage]]
+[[./images/gallery-gallery.png][Gallery]]
