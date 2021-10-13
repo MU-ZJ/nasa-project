@@ -7,9 +7,10 @@ function Gallery() {
 
     useEffect(() => {
 
-        axios.get(`https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=10&api_key=${process.env.REACT_APP_API_KEY}`)
+        axios.get(`https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=100&api_key=${process.env.REACT_APP_API_KEY}`)
             .then(res => {
                 setImages(res.data.photos)
+                console.log(res.data.photos)
             })
 
     }, [])
@@ -26,7 +27,7 @@ function Gallery() {
 
                     <figure className="image is-4by3">
 
-                        <img alt="" src={image.img_src} />
+                      <img alt={image.camera.full_name} src={image.img_src} />
 
                     </figure>
 
