@@ -10,7 +10,6 @@ function Gallery() {
         axios.get(`https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?sol=100&api_key=${process.env.REACT_APP_API_KEY}`)
             .then(res => {
                 setImages(res.data.photos)
-                console.log(res.data.photos)
             })
 
     }, [])
