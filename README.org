@@ -1,4 +1,4 @@
-#+TITLE: Hubble API Gallery
+#+TITLE: Mars Rover API Gallery
 
 [[https://nasagallery.herokuapp.com/]]
 
